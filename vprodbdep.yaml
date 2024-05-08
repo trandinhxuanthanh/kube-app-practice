@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: vprodb
-          image: trandinhxuanthanh/vprofiledb_xt:V1
+          image: trandinhxuanthanh/vprofiledb_xt:latest
           # args:
           #   - "--ignore-db-dir=lost+found"
 
