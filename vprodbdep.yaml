@@ -17,9 +17,7 @@ spec:
     spec:
       containers:
         - name: vprodb
-          image: trandinhxuanthanh/vprofiledb_xt:latest
-          # args:
-          #   - "--ignore-db-dir=lost+found"            
+          image: trandinhxuanthanh/vprofiledb_xt:latest    
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: vpro-db-data
@@ -32,11 +30,12 @@ spec:
                 secretKeyRef:
                   name: app-secret
                   key: db-pass
-      nodeName: nodes-ap-southeast-1a.kubevprofile.tdxt1info.xyz
+      nodeSelector:
+        zone: ap-southeast-1b
       volumes:
         - name: vpro-db-data
           awsElasticBlockStore:
-            volumeID: vol-022ce2015651eca86
+            volumeID: vol-058d975ffa05a021c
             fsType: ext4
       initContainers:
         - name: busybox
