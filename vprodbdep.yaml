@@ -19,8 +19,7 @@ spec:
         - name: vprodb
           image: trandinhxuanthanh/vprofiledb_xt:latest
           # args:
-          #   - "--ignore-db-dir=lost+found"
-
+          #   - "--ignore-db-dir=lost+found"            
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: vpro-db-data
@@ -33,8 +32,7 @@ spec:
                 secretKeyRef:
                   name: app-secret
                   key: db-pass
-      nodeSelector:
-        zone: ap-southeast-1a
+      nodeName: nodes-ap-southeast-1a.kubevprofile.tdxt1info.xyz
       volumes:
         - name: vpro-db-data
           awsElasticBlockStore:
