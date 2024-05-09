@@ -8,6 +8,6 @@ spec:
     app: vpromq01
   ports:
     - port: 11211
-      targetPort: vpro01-port
+      targetPort: vpromq01-port
       protocol: TCP
   
